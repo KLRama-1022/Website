@@ -1,0 +1,629 @@
+/* Reset some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Header and navigation */
+header {
+    background-color: #000000;  /* Background color */
+    padding: 20px 0;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background-color 0.3s ease;
+}
+/* Initial Styles for Navbar */
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    padding: 10px 0;
+    z-index: 1000; /* Keep navbar on top */
+    transition: top 0.3s ease; /* Smooth transition for showing/hiding navbar */
+}
+
+/* Navbar Links */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2rem;
+    padding: 10px;
+}
+
+/* When hovering at the top, navbar is visible */
+body:hover .main-header {
+    top: 0; /* Navbar is shown */
+}
+
+/* When scrolled, navbar is hidden */
+body.scrolled .main-header {
+    top: -70px; /* Adjust to the height of your navbar */
+}
+
+/* Optional: Add a transparent background effect when scrolled */
+body.scrolled .main-header {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+nav {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Styling for the navigation links */
+nav ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;  /* Center the nav items */
+    align-items: center;
+    padding: 0;
+}
+
+
+
+/* Hover effect for links */
+nav ul li a:hover {
+    color: #f0f0f0;
+    transform: scale(1.1);  /* Slight zoom effect */
+}
+
+/* Underline effect for the hovered item */
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: white;
+    transition: width 0.3s ease;
+}
+
+/* Active underline effect when hovered */
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* Background color change on hover (for entire header) */
+header:hover {
+    background-color: #1c2829;  /* Darker blue on hover */
+}
+
+
+/* Section styling */
+/* Section Styling */
+/* Section Styling - Center header horizontally, keep section full height */
+.section {
+    padding: 60px 20px;
+    min-height: 100vh; /* Ensure each section fits the full screen height */
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: flex-start; /* Align content at the top */
+    text-align: center; /* Center the text */
+}
+
+/* General section header styling */
+.section h2 {
+    font-size: 2rem;      /* Adjust font size */
+    margin-bottom: 20px;  /* Add some space below the header */
+    color: #333;          /* Set a default text color */
+}
+
+
+/* Home Section */
+/* Home Section Styling */
+.home {
+    background: linear-gradient(135deg, #6a11cb, #2575fc); /* Gradient background */
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Container for home content */
+.home-container {
+    animation: fadeIn 1.5s ease-out;
+    z-index: 2;
+}
+
+/* Main Heading Styling */
+.home h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    animation: slideIn 1s ease-out;
+}
+
+/* Subheading and Contact Info Styling */
+.home p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    margin: 10px 0;
+    animation: fadeInText 1.5s ease-out 0.5s;
+}
+.home a {
+    color: white; /* Change link color to white */
+    text-decoration: none; /* Optional: Removes the underline */
+}
+
+.home a:hover {
+    color: lightgray; /* Optional: Hover effect for the link */
+}
+
+
+/* Button Styling */
+.cta-button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fc25dc;
+    background-color: rgb(35, 44, 164);
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    color: white;
+    background-color: #2575fc;
+    transform: scale(1.1);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInText {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Animated Background Elements */
+.home::before,
+.home::after {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    animation: float 6s infinite alternate ease-in-out;
+}
+
+.home::before {
+    top: -50px;
+    left: -50px;
+    animation-delay: 0.3s;
+}
+
+.home::after {
+    bottom: -50px;
+    right: -50px;
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    from {
+        transform: translate(0, 0);
+    }
+    to {
+        transform: translate(20px, 20px);
+    }
+}
+
+
+/* About Section */
+/* About Section Styling */
+.about {
+    background: linear-gradient(135deg, #f9f7f7, #eb9494); /* Gradient background */
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;   
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping for responsiveness */
+    gap: 20px;
+    justify-content: center;
+}
+
+.about-card {
+    background: linear-gradient(135deg, #11cbc2, #fc25bf); /* Gradient background */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.about-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #070f17;
+}
+
+.about-card p {
+    font-size: 1rem;
+    color: #333;
+    line-height: 1.5;
+}
+
+.about-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    background-color: #3fcc54;
+    color: rgb(255, 255, 255);
+}
+
+.about-card:hover h3 {
+    color: white;
+}
+
+.about-card:hover p {
+    color: white;
+}
+
+
+/* Skills Section */
+/* Section Styling */
+/* General Styles */
+.skills-page {
+    text-align: center;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a18cd1);
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+}
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+/* Background for Languages Section */
+.skills-section:nth-child(1) {
+    background: rgba(0, 123, 255, 0.1);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2);
+}
+
+/* Background for Tools & Technologies Section */
+.skills-section:nth-child(2) {
+    background: rgba(255, 193, 7, 0.1);
+    box-shadow: 0 4px 10px rgba(255, 193, 7, 0.2);
+}
+
+
+.skills-section {
+    margin: 30px 0;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.skills-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.skills-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Circular shapes for Languages */
+.skill-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: radial-gradient(circle at top left, #007bff, #6f42c1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-circle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+}
+
+/* Hexagonal shapes for Tools & Technologies */
+.skill-hexagon {
+    width: 100px;
+    height: 115px;
+    background: linear-gradient(to bottom right, #ffc107, #fd7e14);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-hexagon:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(255, 87, 34, 0.6);
+}
+
+
+/* Experience Section */
+/* Experience Section */
+.experience-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center the heading horizontally */
+    justify-content: center; /* Center the description box vertically */
+    height: 100vh; /* Full viewport height */
+    padding-top: 50px; /* Add some space above the heading */
+    box-sizing: border-box;
+}
+
+/* Experience Heading */
+.section-title {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #090909;
+    text-align: center;
+}
+
+/* Description Box */
+.experience-card {
+    background-color: #000000; /* Black background */
+    padding: 30px;
+    width: 700px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    color: #ffffff; /* White text */
+    text-align: center; /* Center the text inside the box */
+}
+
+/* Blogs Section */
+.blogs {
+    background-color: #42c9db;
+    font-size: 4rem;
+    padding: 40px 20px;
+    text-align: center;
+    overflow: hidden; /* Hide content that exceeds the container's width */
+}
+
+.blog-container {
+    display: flex;
+    flex-direction: column; /* Stack rows vertically */
+    gap: 10px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* Row of blogs animation (left to right) */
+.blog-row.left-to-right {
+    display: flex;
+    gap: 0.5cm;
+    animation: moveLeftToRight 60s linear infinite;
+    flex-wrap: nowrap;
+}
+
+/* Row of blogs animation (right to left) */
+.blog-row.right-to-left {
+    display: flex;
+    gap: 0.5cm;
+    animation: moveRightToLeft 60s linear infinite;
+    flex-wrap: nowrap;
+}
+
+/* Blog card styling */
+.blog-card {
+    background-color: transparent;
+    color: #000000;
+    font-size: 4rem; /* Adjust font size as needed */
+    font-family: 'Raleway', serif;
+    cursor: pointer;
+    padding: 10px 15px; /* Add some padding for spacing */
+    box-sizing: border-box; /* Ensure padding is included in size calculation */
+    display: inline-flex; /* Ensure the card sizes based on its content */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    gap: 0.5cm; /* Space between text and next card */
+}
+
+
+/* Left to Right Animation */
+@keyframes moveLeftToRight {
+    0% {
+        transform: translateX(-10%); /* Start from the left off-screen */
+    }
+    100% {
+        transform: translateX(10%); /* Move to the right off-screen */
+    }
+}
+
+/* Right to Left Animation */
+@keyframes moveRightToLeft {
+    0% {
+        transform: translateX(10%); /* Start from the right off-screen */
+    }
+    100% {
+        transform: translateX(-10%); /* Move to the left off-screen */
+    }
+}
+
+@media (max-width: 1024px) {
+    .blog-card {
+        width: calc(50% - 0.2cm); /* Adjust for 2 items per row on medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .blog-card {
+        width: calc(100% - 0.2cm); /* Adjust for 1 item per row on smaller screens */
+    }
+}
+
+
+
+
+/* Contact Section */
+.contact {
+    background-color: #f1f3f5;
+    padding: 20px 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.contact h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    text-align: center;
+    color: #333;
+}
+
+.contact form {
+    max-width: 80%; /* Adjusted width for responsiveness */
+    width: 600px; /* Fixed width for larger screens */
+    margin: 20px auto;
+    padding: 40px; /* Reduced padding for better proportions */
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.contact label {
+    font-size: 1.2rem;
+    padding: 1px;
+    margin-bottom: 1px;
+    display: block;
+    color: #555;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px; /* Adjusted padding for better alignment */
+    margin-bottom: 1px;
+    border-radius: 10px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+}
+
+.contact textarea {
+    resize: vertical;
+    min-height: 70px; /* Ensures a good default height */
+}
+
+.contact button {
+    background-color: #000000;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+.contact button:hover {
+    background-color: #0ef34b;
+    color: #000; /* Optional: Contrast for hover state */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact form {
+        max-width: 90%; /* Adjusted width for smaller screens */
+        padding: 30px; /* Reduce padding further for smaller devices */
+    }
+
+    .contact h2 {
+        font-size: 2rem;
+    }
+
+    .contact button {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+
+
+/* Footer Styling */
+footer {
+    background-color:#000000;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+

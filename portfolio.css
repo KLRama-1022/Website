@@ -420,35 +420,101 @@ header:hover {
 
 
 /* Experience Section */
-/* Experience Section */
-.experience-section {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Center the heading horizontally */
-    justify-content: center; /* Center the description box vertically */
-    height: 100vh; /* Full viewport height */
-    padding-top: 50px; /* Add some space above the heading */
-    box-sizing: border-box;
-}
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@300;400;600&display=swap');
 
-/* Experience Heading */
-.section-title {
-    font-size: 3rem;
-    margin-bottom: 20px;
-    color: #090909;
+/* Experience Section Styles */
+#experience {
+    background: linear-gradient(135deg, #362549, #2575fc);
+    padding: 15px 20px;
+    color: #fff;
+    font-family: 'Open Sans', sans-serif; /* Change font */
     text-align: center;
 }
 
-/* Description Box */
+.experience-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+    animation: fadeIn 1s ease;
+}
+
+.section-title {
+    font-size: 3.5em;
+    margin-bottom: 30px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    font-family: 'Roboto', sans-serif; /* Add unique font */
+}
+
 .experience-card {
-    background-color: #000000; /* Black background */
-    padding: 30px;
-    width: 700px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    color: #ffffff; /* White text */
-    text-align: center; /* Center the text inside the box */
+    background: #282828;
+    color: #f0f0f0;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 30px rgba(51, 177, 85, 0.685);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 50px;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Open Sans', sans-serif; /* Font applied here */
+}
+
+.experience-card h3,
+.experience-card h4 {
+    font-family: 'Roboto', sans-serif; /* Different font for headers */
+    font-weight: 700;
+    color: #fff;
+}
+
+.experience-card p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.experience-card h5 {
+    font-size: 1.4em;
+    font-weight: 600;
+    color: #ffcd02; /* Highlighted color */
+    margin-top: 30px;
+}
+
+.experience-card span {
+    font-weight: normal;
+    color: #ddd;
+}
+
+.experience-card ul {
+    list-style: disc;
+    padding-left: 30px;
+    text-align: left;
+    color: #bbb;
+}
+
+.experience-card ul li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+/* Hover Effects */
+.experience-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    background-color: #040404; /* Darken on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Blogs Section */
@@ -531,94 +597,155 @@ header:hover {
     }
 }
 
+/* Connect Section Styles */
+#connect {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #1c1c1c 30%, #333 100%);
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+    padding: 20px;
+}
 
+.connect-container {
+    max-width: 900px;
+    width: 100%;
+    padding: 20px;
+    border-radius: 15px;
+    animation: fadeIn 1s ease;
+}
 
+.connect-container h2 {
+    font-size: 3em;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    color: #fff;
+}
 
-/* Contact Section */
-.contact {
-    background-color: #f1f3f5;
-    padding: 20px 5px;
+.connect-container p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #bfbfbf;
+}
+
+/* Grid Layout for Connect Cards */
+.connect-links {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 cards per row for the first line */
+    gap: 20px;
+    justify-items: center;
+}
+
+@media (max-width: 768px) {
+    .connect-links {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per row for mobile devices */
+    }
+}
+
+.connect-card {
+    background: #444;
+    color: #fff;
+    text-decoration: none;
+    padding: 40px;
+    border-radius: 15px;
+    width: 100%;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    position: relative;
     overflow: hidden;
 }
 
-.contact h2 {
-    font-size: 2.5rem;
-    margin-bottom: 5px;
-    text-align: center;
-    color: #333;
+.connect-card i {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
 }
 
-.contact form {
-    max-width: 80%; /* Adjusted width for responsiveness */
-    width: 600px; /* Fixed width for larger screens */
-    margin: 20px auto;
-    padding: 40px; /* Reduced padding for better proportions */
-    background-color: #fff;
-    border-radius: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.connect-card span {
+    font-size: 1.2em;
+    font-weight: bold;
+    transition: color 0.3s ease;
 }
 
-.contact label {
-    font-size: 1.2rem;
-    padding: 1px;
-    margin-bottom: 1px;
-    display: block;
-    color: #555;
+.connect-card.email {
+    position: relative;
 }
 
-.contact input, .contact textarea {
+.connect-card.email span {
+    font-size: 1em; /* Reduced font size to fit the email text */
+    word-wrap: break-word; /* Ensure long text wraps within the box */
+}
+
+.connect-card.email i {
+    font-size: 2.5em; /* Maintain icon size */
+}
+
+.connect-card::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    left: 0;
     width: 100%;
-    padding: 10px; /* Adjusted padding for better alignment */
-    margin-bottom: 1px;
-    border-radius: 10px;
-    border: 1px solid #ddd;
-    font-size: 1rem;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
 }
 
-.contact textarea {
-    resize: vertical;
-    min-height: 70px; /* Ensures a good default height */
+.connect-card:hover::before {
+    top: 0;
 }
 
-.contact button {
-    background-color: #000000;
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 20px;
-    cursor: pointer;
-    font-size: 1.1rem;
-    transition: background-color 0.3s ease;
+.connect-card:hover i {
+    transform: scale(1.2) rotate(10deg);
 }
 
-.contact button:hover {
-    background-color: #0ef34b;
-    color: #000; /* Optional: Contrast for hover state */
+.connect-card:hover span {
+    color: #000;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact form {
-        max-width: 90%; /* Adjusted width for smaller screens */
-        padding: 30px; /* Reduce padding further for smaller devices */
+.connect-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+}
+
+/* Specific Colors */
+.connect-card.github:hover {
+    background: #333;
+}
+
+.connect-card.linkedin:hover {
+    background: #0077b5;
+}
+
+.connect-card.medium:hover {
+    background: #00ab6c;
+}
+
+.connect-card.phone:hover {
+    background: #00c853;
+}
+
+.connect-card.email:hover {
+    background: #ff6f00;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
     }
-
-    .contact h2 {
-        font-size: 2rem;
-    }
-
-    .contact button {
-        padding: 10px 20px;
-        font-size: 1rem;
+    100% {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
-
-
-
 /* Footer Styling */
 footer {
     background-color:#000000;
